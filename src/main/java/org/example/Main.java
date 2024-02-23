@@ -21,11 +21,9 @@ class Main {
 
         StringBuilder roman = new StringBuilder();
 
-        // Массивы для символов и их значений
         String[] symbols = {"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C"};
         int[] values = {1, 4, 5, 9, 10, 40, 50, 90, 100};
 
-        // Итерируемся по массивам, пока число не будет равно 0
         for (int i = symbols.length - 1; i >= 0; i--) {
             while (num >= values[i]) {
                 roman.append(symbols[i]);
