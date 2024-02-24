@@ -82,7 +82,14 @@ class Main {
         int operand1, operand2, n = 0;
         char operator;
 
-        if (containsRomanNumber(arr[0])) {
+        if (arr.length > 3 || arr.length < 3) {
+            throw new IllegalArgumentException("Много чисел");
+        }
+
+
+        if (containsRomanNumber(arr[0]) && !containsRomanNumber(arr[2]) || containsRomanNumber(arr[2]) || !containsRomanNumber(arr[0])) {
+            throw new IllegalArgumentException("Оба операнды должны быть одного типа");
+        } else if (containsRomanNumber(arr[0]) && containsRomanNumber(arr[2])) {
             n = 1;
             operand1 = romanToInt(arr[0]);
         } else {
@@ -93,9 +100,7 @@ class Main {
         } else {
             operand2 = Integer.parseInt(arr[2]);
         }
-//        if ((containsRomanNumber(arr[0]) && !containsRomanNumber(arr[2])) || !(containsRomanNumber(arr[0]) && containsRomanNumber(arr[2]))) {
-//            throw new IllegalArgumentException("Два разных типа чисел нельзя складывать");
-//        }
+
         operator = arr[1].charAt(0);
 
         int result;
