@@ -105,6 +105,9 @@ class Main {
 //        }
         operator = arr[1].charAt(0);
 
+        if ((operand1 < 1 || operand1 > 10) || (operand2 < 1 || operand2 > 10)) {
+            throw new IllegalArgumentException("ограничения на ввод > 10");
+        }
         int result;
         switch (operator) {
             case '+':
